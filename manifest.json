@@ -4,6 +4,8 @@
   "manifest_version": 2,
   "content_scripts": [{
     "matches": ["https://www.netflix.com/watch/*"],
-    "js": ["content.js"]
-  }]
+    "js": ["start.js"],
+    "run_at": "document_idle"
+  }],
+  "web_accessible_resources": ["content.js"]
 }
