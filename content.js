@@ -11,9 +11,9 @@ timeRemaining.onclick = function() {
   player.pause();
 
   let currentTime = Math.round(player.getCurrentTime() / 1000);
-  let currentMin = Math.floor(currentTime / 60);
-  let currentSecond = currentTime % 60;
-  let defaultTime = `${currentMin}:${currentSecond}`;
+  let currentMin = Math.floor(currentTime / 60).toString();
+  let currentSecond = (currentTime % 60).toString();
+  let defaultTime = `${currentMin.padStart(2, "0")}:${currentSecond.padStart(2, "0")}`;
   let seekTime = window.prompt("Seek to time (format: MM:SS):", defaultTime);
 
   if (seekTime !== null) {
